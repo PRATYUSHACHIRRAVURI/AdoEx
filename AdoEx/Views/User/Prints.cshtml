@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AdoEx.Models.User>
+@using AdoEx.Models
+
+
+
+
+@{
+    ViewBag.Title = "AdoEx";
+}
+@{
+    User s1 = new User();
+    List<User> students = s1.ViewRegistrations();
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Email
+        </th>
+    </tr>
+    @for (int i = 0; i < students.Count(); i++)
+    {
+        <tr>
+            <td>
+                @students[i].Name
+            </td>
+            <td>
+                @students[i].Email
+
+
+
+            </td>
+
+
+
+        </tr>
+    }
+</table>
